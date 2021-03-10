@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo filter</title>
+
+    <link rel="shortcut icon" type="image/svg+xml" href="./assets/favicon.svg" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/6fd0463d9c.js" crossorigin="anonymous"></script>
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">Photo filter</h1>
+    </header>
+
+    <main class="main">
+        <div class="options-area">
+            <button title="Full screen" class="btn full-screen">
+                <i class="fas fa-expand-arrows-alt expand-icon"></i>
+                <i class="fas fa-compress-arrows-alt compress-icon hidden-icon "></i>
+                <span class="btn-label">Full Screen</span>
+            </button>
+            <button title="Reset" class="btn reset">
+                <i class="fas fa-sync-alt"></i>
+                <span class="btn-label">Reset effects</span>
+            </button>
+            <button title="Next picture" class="btn">
+                <i class="fas fa-arrow-right"></i>
+                <span class="btn-label">Next picture</span>
+            </button>
+            
+            <label title = "Load picture" class="btn btn-load" for="btnInput">
+                <i class="fas fa-upload"></i>
+                <span class="btn-label">Load picture</span>
+                <input class="file-input" id="btnInput" name="upload" type="file" accept="image/*">
+            </label>
+
+
+            <button title="Save picture" class="btn">
+                <i class="fas fa-download"></i>
+                <span class="btn-label">Save picture</span>
+            </button>
+        </div>
+
+        <div class="effects-area">
+                <div class="slider">
+                    <h3>Brightness</h3>
+                    <div class="slider-box">
+                        <div class="slider-container">
+                            <input name="brightness" data-sizing="%" type="range" min="0" max="200" value="100" class="slider-input">
+                        </div>
+                        <div class="value">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <h3>Saturate</h3>
+                    <div class="slider-box">
+                        <div class="slider-container">
+                            <input name="saturate" data-sizing="%" type="range" min="0" max="200" value="100" class="slider-input">
+                        </div>
+                        <div class="value">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <h3>Sepia</h3>
+                    <div class="slider-box">
+                        <div class="slider-container">
+                            <input name="sepia" data-sizing="%" type="range" min="0" max="100" value="0" class="slider-input">
+                        </div>
+                        <div class="value">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <h3>Blur</h3>
+                    <div class="slider-box">
+                        <div class="slider-container">
+                            <input name="blur" data-sizing="px" type="range" min="0" max="10" value="0" class="slider-input">
+                        </div>
+                        <div class="value">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider">
+                    <h3>Hue rotate</h3>
+                    <div class="slider-box">
+                        <div class="slider-container">
+                            <input name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" class="slider-input">
+                        </div>
+                        <div class="value">
+                            <p>100</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="edit-area">
+            <img class = "result-img" src="assets/img/default-img.jpg" alt="image">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a class="github" href="https://github.com/Daniel-KI" target="_blank">
+            <i class="fab fa-github"></i>
+            Daniel_KI
+        </a>
+        <a class="rss" href="https://rs.school/js/" target="_blank">
+            <img src="./assets/icons/rss.svg" alt="RS school">
+            <span class="rss-year">'21</span>
+        </a>
+    </footer>
+</body>
+
+</html>
