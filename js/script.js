@@ -48,7 +48,9 @@ nextImgBtn.addEventListener('click', () => {
     }
 
     resultImg.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${newImgName}`;
-})
+    localStorage.setItem('loadedImg', resultImg.src);
+    localStorage.setItem('loadedImgName', newImgName);
+});
 
 
 
