@@ -1,10 +1,11 @@
 const fullScreenBtn = document.querySelector('.full-screen');
-const fileInput = document.querySelector('.file-input');
-const effectSliders = document.querySelectorAll('.slider-box');
 const resetBtn = document.querySelector('.btn-reset');
 const saveBtn = document.querySelector('.btn-save');
-const resultImg = document.querySelector('.result-img');
+const nextImgBtn = document.querySelector('.btn-next-img');
+const fileInput = document.querySelector('.file-input');
 
+const effectSliders = document.querySelectorAll('.slider-box');
+const resultImg = document.querySelector('.result-img');
 
 fullScreenBtn.addEventListener('click', () => {
     if (!document.fullscreenElement) {
@@ -21,6 +22,35 @@ document.addEventListener('fullscreenchange', () => {
     document.querySelector('.compress-icon').classList.toggle('hidden-icon');
     fullScreenBtn.classList.toggle('btn-selected');
 });
+
+nextImgBtn.addEventListener('click', () => {
+    const imgNamesArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg',
+        '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg',
+        '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg',
+        '19.jpg', '20.jpg'];
+
+    let currentImgNumber = imgNamesArray.indexOf(resultImg.src.split('/').pop());
+    let newImgName = (currentImgNumber >= 0 && currentImgNumber < imgNamesArray.length - 1) ?
+        imgNamesArray[currentImgNumber + 1] : imgNamesArray[0];
+
+    let currentDate = new Date();
+    let hour = currentDate.getHours();
+    let timeOfDay = '';
+
+    if (hour < 6) {
+        timeOfDay = 'night';
+    } else if (hour < 12) {
+        timeOfDay = 'morning';
+    } else if (hour < 18) {
+        timeOfDay = 'day';
+    } else if (hour < 24) {
+        timeOfDay = 'evening';
+    }
+
+    resultImg.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${newImgName}`;
+})
+
+
 
 resetBtn.addEventListener('click', () => {
     effectSliders.forEach(slider => {
@@ -69,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loadedImgDataUrl) {
         resultImg.setAttribute('src', loadedImgDataUrl);
     }
-    else{
+    else {
         localStorage.setItem('loadedImg', resultImg.src);
         localStorage.setItem('loadedImgName', 'testImg');
     }
@@ -97,3 +127,5 @@ function updateEffects(input) {
         resultImg.style.filter = imgFilters.join(' ');
     }
 };
+
+
