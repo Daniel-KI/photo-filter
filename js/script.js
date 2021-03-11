@@ -35,8 +35,6 @@ saveBtn.addEventListener('click', () => {
     let img = new Image();
     img.src = resultImg.src;
 
-    console.log(img.src)
-
     let canvas = document.createElement('canvas');
     canvas.width = img.width;
     canvas.height = img.height;
@@ -50,7 +48,7 @@ saveBtn.addEventListener('click', () => {
         link.setAttribute('download', localStorage.getItem('loadedImgName'));
         link.setAttribute('href', canvas.toDataURL("image/png"));
         link.click();
-    }
+    };
 });
 
 fileInput.addEventListener('change', () => {
@@ -60,7 +58,6 @@ fileInput.addEventListener('change', () => {
         localStorage.setItem('loadedImg', reader.result);
         localStorage.setItem('loadedImgName', fileName);
     });
-
     reader.readAsDataURL(fileInput.files[0]);
     reader.onload = () => {
         resultImg.setAttribute('src', localStorage.getItem('loadedImg'));
@@ -75,10 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     else{
         localStorage.setItem('loadedImg', resultImg.src);
         localStorage.setItem('loadedImgName', 'testImg');
-        console.log('ararara')
     }
-})
-
+});
 
 effectSliders.forEach(slider => {
     slider.children[1].children[0].textContent = slider.children[0].children[0].value;
@@ -87,7 +82,6 @@ effectSliders.forEach(slider => {
         updateEffects(slider.children[0].children[0]);
     };
 });
-
 
 function updateEffects(input) {
     if (!resultImg.style.filter.includes(input.getAttribute('name'))) {

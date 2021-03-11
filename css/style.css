@@ -61,6 +61,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-right: 2vw;
 }
 .edit-area{
   grid-column: 2;
@@ -192,6 +193,7 @@ body{
   .effects-area{
     grid-column: 1;
     grid-row: 3;
+    padding: 0;
   }
   .edit-area{
     grid-column: 1;
@@ -200,5 +202,8 @@ body{
   .options-area>*{
     flex: 1 1 auto;
   }
+  .footer{
+    position: static;
+    margin-top: 4vh;
+  }  
 }
-
