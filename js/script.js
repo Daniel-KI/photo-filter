@@ -64,15 +64,28 @@ resetBtn.addEventListener('click', () => {
 
 saveBtn.addEventListener('click', () => {
     let img = new Image();
-    img.setAttribute('crossOrigin', 'anonymous'); 
+    img.setAttribute('crossOrigin', 'anonymous');
     img.src = resultImg.src;
+    img.style.filter = resultImg.style.filter;
+
     const canvas = document.createElement('canvas');
 
     img.onload = function () {
         canvas.width = img.width;
         canvas.height = img.height;
         const ctx = canvas.getContext('2d');
-        ctx.filter = resultImg.style.filter;
+
+        //calculate blur
+        let imgFilters = img.style.filter.split(' ');
+        const blurFilter = imgFilters.find(effect => effect.includes('blur'));
+        if (blurFilter) {
+            const currentBlurValue = blurFilter.replace('blur(', '').replace('px)', '');
+            const imgSizeDifference = img.width / resultImg.width;
+            const finalBlurValue = Math.round(currentBlurValue * imgSizeDifference);
+            img.style.filter = img.style.filter.replace(blurFilter, `blur(${finalBlurValue}px)`);
+        }
+
+        ctx.filter = img.style.filter;
         ctx.drawImage(img, 0, 0);
 
         let link = document.createElement('a');
