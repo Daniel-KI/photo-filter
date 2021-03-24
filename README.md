@@ -16,4 +16,4 @@
 
 ## Ссылки
 - 📌 Demo: https://daniel-ki-photo-filter.netlify.app/
-- 📌 Video review: 
+- 📌 Video review: https://youtu.be/DwH3ZAcxQ9U
