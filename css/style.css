@@ -46,7 +46,6 @@ body{
   grid-row-start: 1;
   grid-row-end: 2;
 
-
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -75,7 +74,6 @@ body{
 .hidden-icon{
   display: none !important;
 }
-
 .btn{
   width: 100px;
   min-height: 60px;
@@ -108,9 +106,6 @@ body{
   display: none;
 }
 
-
-
-
 .slider{
   text-align: left;
   padding: 0px 5px 0px 5px;
@@ -130,17 +125,16 @@ body{
   margin-right: 10px;
 }
 .slider-box .slider-container .slider-input{
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: none;
   appearance: none;
-  width: 100%; /* Full-width */
-  height: 5px; /* Specified height */
-  background: var(--purple); /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  width: 100%;
+  height: 5px;
+  background: var(--purple);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
   transition: opacity .2s;
 }
-
 .slider-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -153,7 +147,6 @@ body{
 .slider-input::-webkit-slider-thumb:active{
   cursor: grabbing;
 }
-
 
 .result-img{
   width: 100%;
@@ -182,8 +175,8 @@ body{
   letter-spacing: 1px;
 }
 
-
 @media(max-width:750px){
+
   .header{
     padding: 2vh 0 2vh 0;
   }
@@ -205,5 +198,6 @@ body{
   .footer{
     position: static;
     margin-top: 4vh;
-  }  
+  }
+
 }
