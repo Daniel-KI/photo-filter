@@ -1,10 +1,10 @@
-const fullScreenBtn = document.querySelector('.full-screen');
-const resetBtn = document.querySelector('.btn-reset');
-const saveBtn = document.querySelector('.btn-save');
-const nextImgBtn = document.querySelector('.btn-next-img');
-const fileInput = document.querySelector('.file-input');
+const fullScreenBtn = document.querySelector('.btn_full-screen');
+const resetBtn = document.querySelector('.btn_reset');
+const saveBtn = document.querySelector('.btn_save');
+const nextImgBtn = document.querySelector('.btn_next-img');
+const fileInput = document.querySelector('.btn__file-input');
 
-const effectSliders = document.querySelectorAll('.slider-box');
+const effectSliders = document.querySelectorAll('.slider__box');
 const resultImg = document.querySelector('.result-img');
 
 fullScreenBtn.addEventListener('click', () => {
@@ -18,8 +18,8 @@ fullScreenBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('fullscreenchange', () => {
-    document.querySelector('.expand-icon').classList.toggle('hidden-icon');
-    document.querySelector('.compress-icon').classList.toggle('hidden-icon');
+    document.querySelector('.icon_expand').classList.toggle('icon_hidden');
+    document.querySelector('.icon_compress').classList.toggle('icon_hidden');
     fullScreenBtn.classList.toggle('btn-selected');
 });
 
